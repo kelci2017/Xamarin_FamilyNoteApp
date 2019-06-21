@@ -13,53 +13,84 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Image Source="hellokittypin.png" HorizontalOptions="Center" 
-               HeightRequest="50" />
-        <Frame Margin="10,-14,10,10" OutlineColor="Black" HasShadow="true">
-        <ListView x:Name="ItemsListView"
+        <Image Source="hellokittypin.png" HorizontalOptions="Center"
+               HeightRequest="80" />
+        <Frame Margin="10,-18,10,10" OutlineColor="Black" HasShadow="false" CornerRadius="7" BackgroundColor="Transparent">
+            <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                
+                HasUnevenRows="true"               
                 RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
-            <d:ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>First Item</x:String>
-                    <x:String>Second Item</x:String>
-                    <x:String>Third Item</x:String>
-                    <x:String>Forth Item</x:String>
-                    <x:String>Fifth Item</x:String>
-                    <x:String>Sixth Item</x:String>
-                </x:Array>
-            </d:ListView.ItemsSource>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First Item</x:String>
+                        <x:String>Second Item</x:String>
+                        <x:String>Third Item</x:String>
+                        <x:String>Forth Item</x:String>
+                        <x:String>Fifth Item</x:String>
+                        <x:String>Sixth Item</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
                             <StackLayout Padding="5" Orientation="Horizontal">
                                 <Image Source="ic_noteimage.png" 
-                                  HeightRequest="30"/>
+                                  HeightRequest="40"/>
                                 <StackLayout>
-                                    <Label Text="{Binding Text}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                                    <Label Text="{Binding Description}" 
-                                d:Text="Item description"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="From: "  
+                                           TextColor="Black"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="{Binding FromWhom}"                                          
+                                           FontAttributes="Bold"
+                                           TextColor="Black"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="To: " 
+                                           TextColor="Black"
+                                           Margin="100,0,0,0"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="{Binding ToWhom}"
+                                           TextColor="Black"
+                                           d:Text="{Binding .}"
+                                           FontAttributes="Bold"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                    </StackLayout>
+                                    <Label Text="{Binding NoteBody}" 
+                                           d:Text="Item description"
+                                           LineBreakMode="NoWrap"
+                                           TextColor="Black"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
+                                    <Label Text="{Binding NoteDate}" 
+                                           d:Text="Item description"
+                                           Margin="180,0,0,0"
+                                           LineBreakMode="NoWrap"
+                                           TextColor="Black"
+                                           FontAttributes="Bold,Italic"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
                                 </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Frame>
     </StackLayout>
-
 </ContentPage>

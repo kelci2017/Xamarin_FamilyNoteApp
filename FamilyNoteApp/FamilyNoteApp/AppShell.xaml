@@ -35,10 +35,10 @@
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
         <Tab Title="Notepad" Icon="ic_notepad.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Notepad}" />
         </Tab>
         <Tab Title="Settings" Icon="ic_settings.png">
-            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:GroupedListXaml}" />
         </Tab>
     </TabBar>
 

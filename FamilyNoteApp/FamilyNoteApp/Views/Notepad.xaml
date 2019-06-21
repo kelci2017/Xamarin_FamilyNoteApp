@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             xmlns:custom="clr-namespace:FamilyNoteApp.Models"
+             x:Class="FamilyNoteApp.Views.Notepad">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10,10,10,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="From "
+                       Margin="0,8,0,0"
+                       WidthRequest="55"
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="16" />
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="40"  
+                             WidthRequest="295"
+                             BorderWidth="5"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"  
+                             FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Padding="10,5,10,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="To " 
+                       WidthRequest="55"
+                       Margin="0,8,0,0"
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="16" />
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="40" 
+                             WidthRequest="295"    
+                             BorderWidth="5"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"                   
+                             FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Padding="10,15,10,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="250"    
+                             BorderWidth="5"
+                             WidthRequest="350"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"                   
+                             FontAttributes="Bold"/>
+                <Image Margin="-100,-80,10,0" Source="ic_pencil.png" 
+                   HeightRequest="60"/>
+            </StackLayout>
+            <StackLayout Padding="0,30,0,0" WidthRequest="300" HorizontalOptions="CenterAndExpand">
+                <Button HeightRequest="40" Text="Submit"
+                    BackgroundColor="Orange"
+                    CornerRadius="10"
+                    Clicked="Submit_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -15,12 +15,12 @@ namespace FamilyNoteApp.Services
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", NoteBody="This is an item description." , FromWhom = "Arwin", ToWhom = "Kelci", NoteDate="2019-06-03"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", NoteBody="This is an item description." , FromWhom = "Kelci", ToWhom = "Emma", NoteDate="2019-06-13"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", NoteBody="This is an item description." , FromWhom = "Alisa", ToWhom = "Arwin", NoteDate="2019-06-11"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", NoteBody="This is an item description." , FromWhom = "Henry", ToWhom = "Kelci", NoteDate="2019-06-15"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", NoteBody="This is an item description." , FromWhom = "Emma", ToWhom = "Henry", NoteDate="2019-06-23"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", NoteBody="This is an item description." , FromWhom = "Arwin", ToWhom = "Alisa", NoteDate="2019-06-28"}
             };
 
             foreach (var item in mockItems)

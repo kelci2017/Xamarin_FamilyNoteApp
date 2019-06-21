@@ -8,13 +8,14 @@
              x:Class="FamilyNoteApp.Views.Login">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="ic_familynote2.jpg" 
+            <Image Margin="0,20,0,0" Source="ic_familynote2.jpg" 
                    HeightRequest="200"/>
           
-            <StackLayout Padding="0,40,0,0" WidthRequest="230" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="0,40,0,0" WidthRequest="250" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Image Source="ic_user.png" 
                    HeightRequest="20"/>
                 <custom:CustomEntry  
+                             x:Name="email"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -22,37 +23,39 @@
                              FontSize="15"  
                              HeightRequest="40"  
                              Placeholder="example@email.com" 
-                             WidthRequest="200"
+                             WidthRequest="220"
                              BorderWidth="5"
                              PlaceholderColor="Gray"  
                              TextColor="Black"  
                              FontAttributes="Bold"/>
             </StackLayout>
-            <StackLayout Padding="0,20,0,0" WidthRequest="230" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="0,15,0,0" WidthRequest="250" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Image Source="ic_lock.png" 
                    HeightRequest="20"/>
                 <custom:CustomEntry  
+                             x:Name="password"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
                              HorizontalTextAlignment="Center"  
                              FontSize="15"  
                              HeightRequest="40" 
-                             WidthRequest="200"    
+                             WidthRequest="220"    
                              BorderWidth="5"
                              PlaceholderColor="Gray"  
                              TextColor="Black"                   
                              FontAttributes="Bold"
                               IsPassword="True"/>
             </StackLayout>
-            <StackLayout Padding="20" WidthRequest="220" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="0,40,0,0" WidthRequest="220" HorizontalOptions="CenterAndExpand">
                 <Button HeightRequest="40" Text="Login"
                     BackgroundColor="Orange"
-                    CornerRadius="10"></Button>
+                    CornerRadius="10"
+                    Clicked="Login_Clicked"></Button>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="0,15,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Label Text="Don't have an account?"></Label>
-                <Button Padding="-20,-28,0,0" Text="Register" BackgroundColor="Transparent" TextColor="Orange"></Button>
+                <Button Padding="-20,-28,0,0" Text="Register" BackgroundColor="Transparent" TextColor="Orange" Clicked="Register_Clicked"></Button>
                 <Label Margin="-22,0,0,0" Text="here."></Label>
             </StackLayout>
             

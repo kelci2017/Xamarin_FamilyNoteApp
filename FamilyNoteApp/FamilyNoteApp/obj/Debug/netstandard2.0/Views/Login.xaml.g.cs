@@ -17,8 +17,16 @@ namespace FamilyNoteApp.Views {
     public partial class Login : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry email;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry password;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Login));
+            email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "email");
+            password = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "password");
         }
     }
 }

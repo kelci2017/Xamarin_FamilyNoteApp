@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:custom="clr-namespace:FamilyNoteApp.Models"
+             x:Class="FamilyNoteApp.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="0,40,0,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Email: "
+                       Margin="0,8,0,0"
+                       WidthRequest="150"
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="16" />
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="40"  
+                             Placeholder="example@email.com" 
+                             WidthRequest="200"
+                             BorderWidth="5"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"  
+                             FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Padding="0,15,0,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Password: " 
+                       WidthRequest="150"
+                       Margin="0,8,0,0"
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="16" />
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="40" 
+                             WidthRequest="200"    
+                             BorderWidth="5"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"                   
+                             FontAttributes="Bold"
+                              IsPassword="True"/>
+            </StackLayout>
+            <StackLayout Padding="0,15,0,0" WidthRequest="350" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Re-enter Password: " 
+                       WidthRequest="150"
+                       Margin="0,8,0,0"
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="16" />
+                <custom:CustomEntry  
+                             CornerRadius="18"  
+                             IsCurvedCornersEnabled="True"  
+                             BorderColor="Orange"      
+                             HorizontalTextAlignment="Center"  
+                             FontSize="15"  
+                             HeightRequest="40" 
+                             WidthRequest="200"    
+                             BorderWidth="5"
+                             PlaceholderColor="Gray"  
+                             TextColor="Black"                   
+                             FontAttributes="Bold"
+                              IsPassword="True"/>
+            </StackLayout>
+            <StackLayout Padding="0,30,0,0" WidthRequest="220" HorizontalOptions="CenterAndExpand">
+                <Button HeightRequest="40" Text="Register"
+                    BackgroundColor="Orange"
+                    CornerRadius="10"
+                    Clicked="Register_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
