@@ -11,6 +11,20 @@
           "lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll": {}
         }
       },
+      "FinalSprint.Controls.Calendar/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.6.0.293080"
+        },
+        "compile": {
+          "lib/MonoAndroid10/XamForms.Controls.Calendar.Droid.dll": {},
+          "lib/MonoAndroid10/XamForms.Controls.Calendar.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/XamForms.Controls.Calendar.Droid.dll": {},
+          "lib/MonoAndroid10/XamForms.Controls.Calendar.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2330,6 +2344,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FinalSprint.Controls.Calendar": "1.3.2",
           "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "XLabs.Forms": "2.0.5782",
           "Xamarin.Essentials": "1.1.0",
@@ -2356,6 +2371,34 @@
         "exiflib.pcl.1.0.1.nupkg.sha512",
         "exiflib.pcl.nuspec",
         "lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll"
+      ]
+    },
+    "FinalSprint.Controls.Calendar/1.3.2": {
+      "sha512": "/UEhn7JBdngjNvpx3bwuK8n6bptqNEvILExUamN+ncahwNjeyl3STqLtW7n6BxrCWboSPBmEV2p4BFdFMfpVIA==",
+      "type": "package",
+      "path": "finalsprint.controls.calendar/1.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "finalsprint.controls.calendar.1.3.2.nupkg.sha512",
+        "finalsprint.controls.calendar.nuspec",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.Droid.dll",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.Droid.pdb",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.dll",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.pdb",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.dll",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.iOS.dll",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.iOS.pdb",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.pdb",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.pdb",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.pdb",
+        "lib/netstandard2.0/XamForms.Controls.Calendar.dll",
+        "lib/netstandard2.0/XamForms.Controls.Calendar.pdb",
+        "lib/portable-win+net461/XamForms.Controls.Calendar.dll",
+        "lib/portable-win+net461/XamForms.Controls.Calendar.pdb"
       ]
     },
     "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -7239,6 +7282,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "FamilyNoteApp >= 1.0.0",
+      "FinalSprint.Controls.Calendar >= 1.3.2",
       "XLabs.Forms >= 2.0.5782",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.1",
@@ -7295,6 +7339,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "FinalSprint.Controls.Calendar": {
+            "target": "Package",
+            "version": "[1.3.2, )"
+          },
           "XLabs.Forms": {
             "target": "Package",
             "version": "[2.0.5782, )"

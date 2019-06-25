@@ -1,8 +1,11 @@
 ﻿using FamilyNoteApp.Models;
+using FamilyNoteApp.Models.dataStructure;
+using FamilyNoteApp.Models.restService;
 using FamilyNoteApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -17,6 +20,7 @@ namespace FamilyNoteApp.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new SettingsViewModel();
+            ObserveViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -39,11 +43,11 @@ namespace FamilyNoteApp.Views
             }
             else if (item.Name.Equals("Check notes date"))
             {
-                await Navigation.PushModalAsync(new NavigationPage(new AddFamilyMembers()));
+                await Navigation.PushModalAsync(new NavigationPage(new NoteDate()));
             }
             else if (item.Name.Equals("Logout"))
             {
-
+                await App.serviceUtil.Logout();
             }
 
             // Manually deselect item.
@@ -55,6 +59,29 @@ namespace FamilyNoteApp.Views
 
             if (viewModel.grouped.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+        private void ObserveViewModel()
+        {
+            MessagingCenter.Subscribe<RestService, BaseResult>(this, "Logout", (obj, Result) =>
+            {
+                var result = Result as BaseResult;
+                if (result != null && (result.resultCode == Constants.result_success || result.resultCode == Constants.result_timeout))
+                {
+                    Preferences.Set("token", null);
+                    Preferences.Set("sessionid", null);
+                    Application.Current.MainPage = new Login();
+                }
+                else if (result.resultCode == Constants.result_token_expired)
+                {
+                    Preferences.Set("token", null);
+                    _ = App.serviceUtil.Logout();
+                }
+                else
+                {
+                    //show error dialog
+                    DisplayAlert("Logout failed!", Result.resultDesc.ToString(), "OK");
+                }
+            });
         }
     }
 }

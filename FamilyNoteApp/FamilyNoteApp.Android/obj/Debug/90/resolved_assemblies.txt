@@ -123,6 +123,8 @@ D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.Android.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\Xamarin.Forms.Xaml.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.Droid.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XLabs.Core.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XLabs.Forms.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XLabs.Forms.Droid.dll

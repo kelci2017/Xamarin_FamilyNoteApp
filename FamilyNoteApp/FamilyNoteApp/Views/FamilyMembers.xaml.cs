@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -19,14 +20,15 @@ namespace FamilyNoteApp.Views
         {
             InitializeComponent();
             this.from = from;
-            Items = new ObservableCollection<string>
-            {
-                "Kelci",
-                "Arwin",
-                "Alisa",
-                "Emma",
-                "Henry"
-            };
+            Items = App.LoadApplicationProperty<ObservableCollection<string>>("familyMembers");
+            //Items = new ObservableCollection<string>
+            //{
+            //    "Kelci",
+            //    "Arwin",
+            //    "Alisa",
+            //    "Emma",
+            //    "Henry"
+            //};
 
             MyListView.ItemsSource = Items;
         }

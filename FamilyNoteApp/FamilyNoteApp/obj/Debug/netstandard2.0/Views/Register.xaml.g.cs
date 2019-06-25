@@ -17,8 +17,20 @@ namespace FamilyNoteApp.Views {
     public partial class Register : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry register_email;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry register_password;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry reenter_password;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Register));
+            register_email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "register_email");
+            register_password = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "register_password");
+            reenter_password = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "reenter_password");
         }
     }
 }

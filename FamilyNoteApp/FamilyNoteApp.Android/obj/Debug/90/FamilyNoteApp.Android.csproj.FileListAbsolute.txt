@@ -845,3 +845,15 @@ D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\stamp\_C
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\bin\Debug\XamForms.Controls.Calendar.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\bin\Debug\XamForms.Controls.Calendar.Droid.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\linksrc\XamForms.Controls.Calendar.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\linksrc\XamForms.Controls.Calendar.Droid.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\linksrc\XamForms.Controls.Calendar.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\linksrc\XamForms.Controls.Calendar.Droid.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.Droid.dll
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.Droid.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\assets\XamForms.Controls.Calendar.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\src\md5f112b719ffc0b0223f20593de7c69b79\CalendarButtonRenderer.java
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp.Android\obj\Debug\90\android\src\md5f112b719ffc0b0223f20593de7c69b79\TextDrawable.java

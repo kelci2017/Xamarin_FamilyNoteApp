@@ -19,9 +19,11 @@ namespace FamilyNoteApp
         public static string submit_note = BaseAddress + "/notes/create?sessionid={0}&deviceid={1}";
         public static string note_filter = BaseAddress + "/notes/search?from={0}&to={1}&date={2}&sessionid={3}";
         public static string get_token = BaseAddress + "/auth/getToken?sessionid={0}";
-        public static string get_family_members = BaseAddress + "/auth/familyMembers?sessionid={0}";
+        public static string add_family_members = BaseAddress + "/auth/familyMembers?sessionid={0}";
         public static string note_search = BaseAddress + "/notes/globalSearch/{0}?sessionid={1}";
-        public static string notification_register = BaseAddress + "/auth/registerNotification?sessionid={0}";
 
+        public static int result_success = 0;
+        public static int result_token_expired = 21;
+        public static int result_timeout = 16;
     }
 }

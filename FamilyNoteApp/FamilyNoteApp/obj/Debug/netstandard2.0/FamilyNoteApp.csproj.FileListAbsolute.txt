@@ -19,7 +19,8 @@ D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\View
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.csproj.CoreCompileInputs.cache
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.AssemblyInfoInputs.cache
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.AssemblyInfo.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\XamlC.stamp
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\ref\FamilyNoteApp.dll
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.pdb
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\NoteDate.xaml.g.cs
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\XamlC.stamp

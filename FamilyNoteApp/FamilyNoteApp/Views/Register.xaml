@@ -16,6 +16,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="16" />
                 <custom:CustomEntry  
+                             x:Name="register_email"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -37,6 +38,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="16" />
                 <custom:CustomEntry  
+                             x:Name="register_password"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -58,6 +60,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="16" />
                 <custom:CustomEntry  
+                             x:Name="reenter_password"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      

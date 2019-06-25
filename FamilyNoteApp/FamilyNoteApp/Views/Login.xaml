@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="FamilyNoteApp.Views.Login">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="White">
             <Image Margin="0,20,0,0" Source="ic_familynote2.jpg" 
                    HeightRequest="200"/>
           

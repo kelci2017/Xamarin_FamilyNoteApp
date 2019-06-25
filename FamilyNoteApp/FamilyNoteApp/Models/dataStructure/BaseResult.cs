@@ -9,6 +9,6 @@ namespace FamilyNoteApp.Models.dataStructure
 
        public int resultCode { get; set; }
 
-        public string resultDesc { get; set; }
+        public object resultDesc { get; set; }
     }
 }

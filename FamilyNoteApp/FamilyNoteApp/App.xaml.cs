@@ -6,6 +6,7 @@ using FamilyNoteApp.Views;
 using FamilyNoteApp.Models;
 using FamilyNoteApp.Models.restService;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace FamilyNoteApp
 {
@@ -41,6 +42,16 @@ namespace FamilyNoteApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+        public static async Task SaveApplicationProperty<T>(string key, T value)
+        {
+            Xamarin.Forms.Application.Current.Properties[key] = value;
+            await Xamarin.Forms.Application.Current.SavePropertiesAsync();
+        }
+
+        public static T LoadApplicationProperty<T>(string key)
+        {
+            return (T)Xamarin.Forms.Application.Current.Properties[key];
         }
     }
 }

@@ -42,6 +42,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "FinalSprint.Controls.Calendar": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
             "XLabs.Forms": {
               "target": "Package",
               "version": "[2.0.5782, )"
@@ -112,6 +116,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FinalSprint.Controls.Calendar": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
             "Microsoft.AspNetCore.Mvc.RazorPages": {
               "target": "Package",
               "version": "[2.2.5, )"

@@ -21,29 +21,32 @@ namespace FamilyNoteApp.Models.restService
             return await restService.Login(userPostBody);
         }
 
-        //public async Task<BaseResult> Logout()
-        //{
-        //    return null;
-        //}
+        public async Task<BaseResult> Logout()
+        {
+            return await restService.Logout();
+        }
 
-        //public async Task<BaseResult> Register()
-        //{
-        //    return null;
-        //}
+        public async Task<TokenSessionRestResult> Register(UserPostBody userPostBody)
+        {
+            return await restService.Register(userPostBody);
+        }
 
-        //public async Task<BaseResult> SearchNote()
-        //{
-        //    return null;
-        //}
+        public async Task<BaseResult> SearchNote(string keywords)
+        {
+            return await restService.SearchNote(keywords);
+        }
+        public async Task<BaseResult> FilterNote(string sender, string receiver, string date)
+        {
+            return await restService.FilterNote(sender, receiver, date);
+        }
+        public async Task<BaseResult> SubmitNote(NoteItem note)
+        {
+            return await restService.SubmitNote(note);
+        }
 
-        //public async Task<BaseResult> SubmitNote()
-        //{
-        //    return null;
-        //}
-
-        //public async Task<BaseResult> AddFamilyMember()
-        //{
-        //    return null;
-        //}
+        public async Task<BaseResult> AddFamilyMember()
+        {
+            return null;
+        }
     }
 }

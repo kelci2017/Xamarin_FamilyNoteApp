@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FamilyNoteApp.Models.dataStructure
 {
-    class NoteItem
+    public class NoteItem
     {
         public string fromWhom { get; set; }
 
