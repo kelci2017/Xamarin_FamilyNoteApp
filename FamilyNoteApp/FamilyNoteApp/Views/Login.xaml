@@ -16,9 +16,9 @@
                    HeightRequest="20"/>
                 <custom:CustomEntry  
                              x:Name="email"
-                             CornerRadius="18"  
+                             CornerRadius="15"  
                              IsCurvedCornersEnabled="True"  
-                             BorderColor="Orange"      
+                             BorderColor="Gray"       
                              HorizontalTextAlignment="Center"  
                              FontSize="15"  
                              HeightRequest="40"  
@@ -34,9 +34,9 @@
                    HeightRequest="20"/>
                 <custom:CustomEntry  
                              x:Name="password"
-                             CornerRadius="18"  
+                             CornerRadius="15"  
                              IsCurvedCornersEnabled="True"  
-                             BorderColor="Orange"      
+                             BorderColor="Gray"       
                              HorizontalTextAlignment="Center"  
                              FontSize="15"  
                              HeightRequest="40" 
@@ -56,7 +56,7 @@
             <StackLayout Padding="0,15,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Label Text="Don't have an account?"></Label>
                 <Button Padding="-20,-28,0,0" Text="Register" BackgroundColor="Transparent" TextColor="Orange" Clicked="Register_Clicked"></Button>
-                <Label Margin="-22,0,0,0" Text="here."></Label>
+                <Label Margin="-25,0,0,0" Text="here."></Label>
             </StackLayout>
             
         </StackLayout>
