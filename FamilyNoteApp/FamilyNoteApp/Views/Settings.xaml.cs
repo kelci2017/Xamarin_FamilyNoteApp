@@ -11,12 +11,12 @@ using Xamarin.Forms.Internals;
 
 namespace FamilyNoteApp.Views
 {
-    public partial class GroupedListXaml : ContentPage
+    public partial class Settings : ContentPage
     {
 
         SettingsViewModel viewModel;
 
-        public GroupedListXaml()
+        public Settings()
         {
             InitializeComponent();
             BindingContext = viewModel = new SettingsViewModel();

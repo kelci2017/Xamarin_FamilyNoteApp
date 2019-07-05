@@ -6,13 +6,11 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 using FamilyNoteApp.Models;
-using FamilyNoteApp.Services;
 
 namespace FamilyNoteApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy
@@ -28,6 +26,25 @@ namespace FamilyNoteApp.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        string sender = "All";
+        public string Sender
+        {
+            get { return sender; }
+            set { SetProperty(ref sender, value); }
+        }
+
+        string created = DateTime.Now.ToString().Substring(0, 10);
+        public string Created
+        {
+            get { return created; }
+            set { SetProperty(ref created, value); }
+        }
+        string receiver = "All";
+        public string Receiver
+        {
+            get { return receiver; }
+            set { SetProperty(ref receiver, value); }
+        }
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",
             Action onChanged = null)

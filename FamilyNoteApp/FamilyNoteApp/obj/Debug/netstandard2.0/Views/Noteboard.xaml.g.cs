@@ -8,17 +8,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("FamilyNoteApp.Views.Noteboard.xaml", "Views/Noteboard.xaml", typeof(global::FamilyNoteApp.Views.noteboard.Noteboard))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("FamilyNoteApp.Views.Noteboard.xaml", "Views/Noteboard.xaml", typeof(global::FamilyNoteApp.Views.Noteboard))]
 
-namespace FamilyNoteApp.Views.noteboard {
+namespace FamilyNoteApp.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Noteboard.xaml")]
     public partial class Noteboard : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ContentPage BrowseItemsPage;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView ItemsListView;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Noteboard));
+            BrowseItemsPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "BrowseItemsPage");
+            ItemsListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ItemsListView");
         }
     }
 }

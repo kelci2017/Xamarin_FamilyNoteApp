@@ -1,6 +1,7 @@
-﻿using System;
+﻿using FamilyNoteApp.Models.restService;
+using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace FamilyNoteApp
@@ -10,6 +11,15 @@ namespace FamilyNoteApp
         public AppShell()
         {
             InitializeComponent();
+            if (App.LoadApplicationProperty<ObservableCollection<string>>("familyMembers").Count == 0)
+            {
+                getFamilyMmembers();
+            }
+        }
+
+        async void getFamilyMmembers()
+        {
+           await App.serviceUtil.GetFamilyMembers();
         }
     }
 }

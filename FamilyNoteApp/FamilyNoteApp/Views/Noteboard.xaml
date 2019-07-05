@@ -4,12 +4,94 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FamilyNoteApp.Views.noteboard.Noteboard">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="FamilyNoteApp.Views.Noteboard"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_lock.png" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>-->
+
+    <StackLayout>
+        <Image Source="hellokittypin.png" HorizontalOptions="Center"
+               HeightRequest="80" />
+        <Frame Margin="10,-18,10,10" OutlineColor="Black" HasShadow="false" CornerRadius="7" BackgroundColor="Transparent">
+            <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Notes}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"               
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First Item</x:String>
+                        <x:String>Second Item</x:String>
+                        <x:String>Third Item</x:String>
+                        <x:String>Forth Item</x:String>
+                        <x:String>Fifth Item</x:String>
+                        <x:String>Sixth Item</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" Orientation="Horizontal">
+                                <Image Source="ic_noteimage.png" 
+                                  HeightRequest="40"/>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="From: "  
+                                           TextColor="Black"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="{Binding fromWhom}"                                          
+                                           FontAttributes="Bold"
+                                           WidthRequest="50"
+                                           TextColor="Black"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="To: " 
+                                           TextColor="Black"
+                                           Margin="30,0,0,0"
+                                           d:Text="{Binding .}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                        <Label Text="{Binding toWhom}"
+                                           TextColor="Black"
+                                           WidthRequest="50"
+                                           d:Text="{Binding .}"
+                                           FontAttributes="Bold"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="14" />
+                                    </StackLayout>
+                                    <Label Text="{Binding noteBody}" 
+                                           d:Text="Item description"
+                                           LineBreakMode="NoWrap"
+                                           TextColor="Black"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
+                                    <Label Text="{Binding created}" 
+                                           d:Text="Item description"
+                                           Margin="180,0,0,0"
+                                           LineBreakMode="NoWrap"
+                                           TextColor="Black"
+                                           FontAttributes="Bold,Italic"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </StackLayout>
 </ContentPage>

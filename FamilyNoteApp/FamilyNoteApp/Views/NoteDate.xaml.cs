@@ -18,11 +18,13 @@ namespace FamilyNoteApp.Views
         {
             InitializeComponent();
         }
-        void DateClicked (object sender, EventArgs e)
-        {
-           
+        async void DateClicked (object sender, EventArgs e)
+        {           
             var dateSelect = calendar.SelectedDate;
-            Debug.WriteLine("*************************" + dateSelect.ToString());
+            string noteDate = dateSelect.ToString().Substring(0, 10);
+            MessagingCenter.Send(this, "NoteDate", noteDate);
+            App.NoteDate = noteDate;
+            await Navigation.PopModalAsync();
         }
 }
 }

@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Net.Http.Headers;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json.Linq;
 
 namespace FamilyNoteApp.Models.restService
 {
@@ -110,30 +111,44 @@ namespace FamilyNoteApp.Models.restService
         {
 
             BaseResult Result = new BaseResult();
-            if (Preferences.Get("token", null) == null)
+
+            var uri = new Uri(string.Format(Constants.get_family_members, Preferences.Get("sessionid", null)));
+            int resultcode = Constants.result_token_expired;
+            while (resultcode == Constants.result_token_expired)
             {
-                GetToken();
-            }
-
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Preferences.Get("token", null));
-
-            var uri = new Uri(string.Format(Constants.add_family_members, Preferences.Get("sessionid", null)));
-
-            try
-            {
-                var response = await _client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Preferences.Get("token", null));
+                try
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    Result = JsonConvert.DeserializeObject<BaseResult>(content);
-                    ObservableCollection<string> familyMemberList = Result.resultDesc as ObservableCollection<string>;
-                    await App.SaveApplicationProperty("familyMembers", familyMemberList);
+                    var response = await _client.GetAsync(uri);
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        var content = await response.Content.ReadAsStringAsync();
+                        Result = JsonConvert.DeserializeObject<BaseResult>(content);
+                        resultcode = Result.resultCode;
+                        if (Result.resultCode == Constants.result_success)
+                        {
+                            ObservableCollection<string> familyMemberList = new ObservableCollection<string>();
+                            familyMemberList = JsonConvert.DeserializeObject<ObservableCollection<string>>(Result.resultDesc.ToString());
+                            
+                            await App.SaveApplicationProperty("familyMembers", familyMemberList);
+                        }
+                        else if (Result.resultCode == Constants.result_token_expired)
+                        {
+                            Preferences.Set("token", null);
+
+                            GetToken();
+
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(@"\tERROR {0}", ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(@"\tERROR {0}", ex.Message);
-            }
+            
 
             return Result;
         }
@@ -147,7 +162,7 @@ namespace FamilyNoteApp.Models.restService
             }
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Preferences.Get("token", null));
 
-            var uri = new Uri(string.Format(Constants.add_family_members, Preferences.Get("sessionid", null)));
+            var uri = new Uri(string.Format(Constants.add_family_member, Preferences.Get("sessionid", null)));
             var json = JsonConvert.SerializeObject(postFamilyMembers);
             var postbody = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -156,6 +171,7 @@ namespace FamilyNoteApp.Models.restService
                 var response = await _client.PostAsync(uri, postbody);
                 if (response.IsSuccessStatusCode)
                 {
+                    _ = App.SaveApplicationProperty("familyMembers", postFamilyMembers.familyMembers);
                     var content = await response.Content.ReadAsStringAsync();
                     Result = JsonConvert.DeserializeObject<BaseResult>(content);
                     MessagingCenter.Send(this, "AddFamilyMembers", Result);
@@ -190,7 +206,7 @@ namespace FamilyNoteApp.Models.restService
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     Result = JsonConvert.DeserializeObject<BaseResult>(content);
-                    MessagingCenter.Send(this, "SubmitNote", Result);
+                    MessagingCenter.Send(this, "SubmiteNote", Result);
                 }
             }
             catch (Exception ex)
@@ -211,17 +227,23 @@ namespace FamilyNoteApp.Models.restService
 
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Preferences.Get("token", null));
 
-            var uri = new Uri(string.Format(Constants.note_filter, Preferences.Get("sessionid", null), sender, receiver, date));
+            var uri = new Uri(string.Format(Constants.note_filter, sender, receiver, date, Preferences.Get("sessionid", null)));
 
             try
             {
                 var response = await _client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
+                    var responseData = response.Content.ReadAsStringAsync().Result;
+                    JObject result = JObject.Parse(responseData);
+
+                    var clientarray = result["resultDesc"].Value<JArray>();
+                    ObservableCollection<NewNote> filteredNoteList = clientarray.ToObject<ObservableCollection<NewNote>>();
+
                     var content = await response.Content.ReadAsStringAsync();
                     Result = JsonConvert.DeserializeObject<BaseResult>(content);
-                    ObservableCollection<NewNote> filteredNoteList = Result.resultDesc as ObservableCollection<NewNote>;
-                    await App.SaveApplicationProperty("filteredNote", filteredNoteList);
+                    //ObservableCollection<NewNote> filteredNoteList = Result.resultDesc as ObservableCollection<NewNote>;
+                    MessagingCenter.Send(this, "FilteredNote", result);
                 }
             }
             catch (Exception ex)

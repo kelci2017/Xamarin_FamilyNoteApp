@@ -17,6 +17,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="16" />
                 <custom:CustomEntry  
+                             x:Name="from"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -37,6 +38,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="16" />
                 <custom:CustomEntry  
+                             x:Name="receiver"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -52,6 +54,7 @@
             <StackLayout Padding="10,15,10,0" WidthRequest="340" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 
                 <custom:CustomEntry  
+                             x:Name="noteBody"
                              CornerRadius="18"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      

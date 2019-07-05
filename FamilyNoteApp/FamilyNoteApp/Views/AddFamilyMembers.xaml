@@ -23,6 +23,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                             x:Name="name1"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -42,7 +43,8 @@
                        LineBreakMode="NoWrap" 
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
-                <custom:CustomEntry  
+                <custom:CustomEntry 
+                            x:Name="name2"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -64,6 +66,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                            x:Name="name3"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -85,6 +88,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                             x:Name="name4"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -106,6 +110,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                            x:Name="name5"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -127,6 +132,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                            x:Name="name6"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -148,6 +154,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                             x:Name="name7"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -168,7 +175,8 @@
                        LineBreakMode="NoWrap" 
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
-                <custom:CustomEntry  
+                <custom:CustomEntry 
+                             x:Name="name8"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      
@@ -190,6 +198,7 @@
                        Style="{DynamicResource ListItemTextStyle}" 
                        FontSize="15" />
                 <custom:CustomEntry  
+                            x:Name="name9"
                              CornerRadius="10"  
                              IsCurvedCornersEnabled="True"  
                              BorderColor="Orange"      

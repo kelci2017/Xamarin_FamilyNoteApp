@@ -17,8 +17,20 @@ namespace FamilyNoteApp.Views {
     public partial class Notepad : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry from;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry receiver;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::FamilyNoteApp.Models.CustomEntry noteBody;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Notepad));
+            from = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "from");
+            receiver = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "receiver");
+            noteBody = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::FamilyNoteApp.Models.CustomEntry>(this, "noteBody");
         }
     }
 }

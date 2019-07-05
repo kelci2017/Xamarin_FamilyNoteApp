@@ -44,9 +44,13 @@ namespace FamilyNoteApp.Models.restService
             return await restService.SubmitNote(note);
         }
 
-        public async Task<BaseResult> AddFamilyMember()
+        public async Task<BaseResult> AddFamilyMember(PostFamilyMembers postFamilyMembers)
         {
-            return null;
+            return await restService.AddFamilyMembers(postFamilyMembers);
+        }
+        public async Task<BaseResult> GetFamilyMembers()
+        {
+            return await restService.GetFamilyMembers();
         }
     }
 }

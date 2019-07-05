@@ -8,20 +8,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("FamilyNoteApp.Views.GroupedListXaml.xaml", "Views/GroupedListXaml.xaml", typeof(global::FamilyNoteApp.Views.GroupedListXaml))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("FamilyNoteApp.Views.Settings.xaml", "Views/Settings.xaml", typeof(global::FamilyNoteApp.Views.Settings))]
 
 namespace FamilyNoteApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\GroupedListXaml.xaml")]
-    public partial class GroupedListXaml : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Settings.xaml")]
+    public partial class Settings : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView lstView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(GroupedListXaml));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Settings));
             lstView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "lstView");
         }
     }

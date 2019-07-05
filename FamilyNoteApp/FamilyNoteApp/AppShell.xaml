@@ -32,13 +32,13 @@
     <!-- Your Pages -->
     <TabBar>
         <Tab Title="Noteboard" Icon="ic_noteboard.jpg">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Noteboard}" />
         </Tab>
         <Tab Title="Notepad" Icon="ic_notepad.png">
             <ShellContent ContentTemplate="{DataTemplate local:Notepad}" />
         </Tab>
         <Tab Title="Settings" Icon="ic_settings.png">
-            <ShellContent ContentTemplate="{DataTemplate local:GroupedListXaml}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Settings}" />
         </Tab>
     </TabBar>
 

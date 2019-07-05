@@ -5,10 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
              mc:Ignorable="d"
+             Title="FamilyNoteApp"
              x:Class="FamilyNoteApp.Views.NoteDate">
     <ContentPage.Content>
         <controls:Calendar x:Name="calendar" Padding="10,0,10,0" StartDay="Monday" 
-                           SelectedBorderWidth="4" DisabledBorderColor="Black" 
-                           DateCommand="{Binding DateClicked}"/>
+                           SelectedBorderWidth="4" DisabledBorderColor="Black"                           
+                           DateClicked="DateClicked"/>
     </ContentPage.Content>
 </ContentPage>

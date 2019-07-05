@@ -5,15 +5,9 @@ D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\bin\Debug\netstandard2.0\Fami
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.csprojAssemblyReference.cache
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\AddFamilyMembers.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\FamilyMembers.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\GroupedListXaml.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Login.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
-D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Noteboard.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Notepad.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Register.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.csproj.CoreCompileInputs.cache
@@ -24,3 +18,5 @@ D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\ref\
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\FamilyNoteApp.pdb
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\NoteDate.xaml.g.cs
 D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\XamlC.stamp
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Noteboard.xaml.g.cs
+D:\kelci\FamilyNoteApp\FamilyNoteApp\FamilyNoteApp\obj\Debug\netstandard2.0\Views\Settings.xaml.g.cs

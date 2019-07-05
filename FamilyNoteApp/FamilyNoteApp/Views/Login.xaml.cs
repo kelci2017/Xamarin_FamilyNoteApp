@@ -22,6 +22,7 @@ namespace FamilyNoteApp.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            observeViewModel();
         }
 
         async void Login_Clicked(object sender, EventArgs e)
@@ -50,27 +51,7 @@ namespace FamilyNoteApp.Views
             
             
             await App.serviceUtil.Login(new UserPostBody { email = email.Text, password = password.Text});
-            //await Navigation.PushModalAscync(new AppShell());
-            MessagingCenter.Subscribe<RestService, TokenSessionRestResult>(this, "Login", (obj, Result) =>
-            {
-                
-                var result = Result as TokenSessionRestResult;
-                if (result != null && result.resultCode == Constants.result_success)
-                {
-                    //save the userid and token in the local preferences
-                    Preferences.Set("userID", Result.userID);
-                    Preferences.Set("sessionid", Result.sessionID);
-                    Preferences.Set("token", Result.token);
-                    Application.Current.MainPage = new AppShell();
-                }
-                else
-                {
-                    //show error dialog
-                    DisplayAlert("Login failed!", Result.resultDesc.ToString(), "OK");
-                }
-            });
-
-            
+         
         }
         public bool IsValidEmail(string emailaddress)
         {
@@ -88,6 +69,28 @@ namespace FamilyNoteApp.Views
         async void Register_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new Register()));
+        }
+
+        private void observeViewModel()
+        {
+            MessagingCenter.Subscribe<RestService, TokenSessionRestResult>(this, "Login", (obj, Result) =>
+            {
+
+                var result = Result as TokenSessionRestResult;
+                if (result != null && result.resultCode == Constants.result_success)
+                {
+                    //save the userid and token in the local preferences
+                    Preferences.Set("userID", Result.userID);
+                    Preferences.Set("sessionid", Result.sessionID);
+                    Preferences.Set("token", Result.token);
+                    Application.Current.MainPage = new AppShell();
+                }
+                else
+                {
+                    //show error dialog
+                    DisplayAlert("Login failed!", Result.resultDesc.ToString(), "OK");
+                }
+            });
         }
     }
 }
