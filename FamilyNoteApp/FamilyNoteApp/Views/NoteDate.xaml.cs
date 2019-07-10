@@ -20,10 +20,11 @@ namespace FamilyNoteApp.Views
         }
         async void DateClicked (object sender, EventArgs e)
         {           
-            var dateSelect = calendar.SelectedDate;
-            string noteDate = dateSelect.ToString().Substring(0, 10);
+            DateTime dateSelect = (DateTime)calendar.SelectedDate;
+            string noteDate = dateSelect.ToString("MM/dd/yyyy");
+            Debug.WriteLine("_________________" + noteDate);
             MessagingCenter.Send(this, "NoteDate", noteDate);
-            App.NoteDate = noteDate;
+            //App.NoteDate = noteDate;
             await Navigation.PopModalAsync();
         }
 }

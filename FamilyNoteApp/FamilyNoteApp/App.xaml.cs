@@ -15,7 +15,7 @@ namespace FamilyNoteApp
         public static ServiceUtil serviceUtil { get; private set; }
         public static string Sender = "All";
         public static string Receiver = "All";
-        public static string NoteDate = DateTime.Now.ToString().Substring(0, 10);
+        public static string NoteDate = DateTime.Now.ToString("MM/dd/yyyy");
 
         public App()
         {

@@ -32,7 +32,7 @@ namespace FamilyNoteApp.Views
                 memberList = App.LoadApplicationProperty<ObservableCollection<string>>("familyMembers");
             }
             addFamilyMembers();
-            if (memberList.Count == App.LoadApplicationProperty<ObservableCollection<string>>("familyMembers").Count) return;
+            //if (memberList.Count == App.LoadApplicationProperty<ObservableCollection<string>>("familyMembers").Count) return;
             PostFamilyMembers postList = new PostFamilyMembers() { userID = Preferences.Get("userID", null), familyMembers = memberList };
             await App.serviceUtil.AddFamilyMember(postList);
         }

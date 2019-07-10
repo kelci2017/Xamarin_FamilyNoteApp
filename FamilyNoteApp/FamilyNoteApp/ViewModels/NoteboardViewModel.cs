@@ -33,7 +33,7 @@ namespace FamilyNoteApp.ViewModels
         }
         private async void FilterNote()
         {
-            await App.serviceUtil.FilterNote("All", "All", DateTime.Now.ToString().Substring(0, 10));
+            await App.serviceUtil.FilterNote("All", "All", DateTime.Now.ToString("MM/dd/yyyy"));
         }
 
         private void ExecuteLoadItemsCommand()
@@ -80,6 +80,7 @@ namespace FamilyNoteApp.ViewModels
                     foreach (var item in filteredNoteList)
                     {
                         Notes.Add(item);
+                        Debug.WriteLine("Note date is:" + item.created);
                     }
                     Debug.WriteLine("******************" + Notes.Count);
                 }

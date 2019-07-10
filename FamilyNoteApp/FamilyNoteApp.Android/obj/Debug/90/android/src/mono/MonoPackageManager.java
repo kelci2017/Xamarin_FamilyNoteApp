@@ -110,7 +110,6 @@ public class MonoPackageManager {
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "FamilyNoteApp.Android.dll" comes first in this list. */
-		"FamilyNoteApp.Android.dll",
 		"ExifLib.dll",
 		"FamilyNoteApp.dll",
 		"FormsViewGroup.dll",

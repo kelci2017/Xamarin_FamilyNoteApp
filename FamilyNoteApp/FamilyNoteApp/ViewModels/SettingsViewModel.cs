@@ -14,7 +14,7 @@ namespace FamilyNoteApp.ViewModels
         public ObservableCollection<GroupedVeggieModel> grouped { get; set; }
         private String sender = "All";
         private String receiver = "All";
-        private String noteDate = "Today";
+        private String noteDate = DateTime.Now.ToString("MM/dd/yyyy");
         public Command LoadItemsCommand { get; set; }
 
         public SettingsViewModel()
@@ -41,7 +41,9 @@ namespace FamilyNoteApp.ViewModels
             });
             MessagingCenter.Subscribe<NoteDate, String>(this, "NoteDate", async (obj, Result) =>
             {
+                
                 noteDate = Result as String;
+                Debug.WriteLine("&&&&&&&&&&&&&&&" + noteDate);
                 App.NoteDate = noteDate;
                 grouped.Clear();
                 SetList();
@@ -50,8 +52,8 @@ namespace FamilyNoteApp.ViewModels
         }
         private void SetList()
         {
-            var veggieGroup = new GroupedVeggieModel() { LongName = "Settings", ShortName = "f" };
-            var fruitGroup = new GroupedVeggieModel() { LongName = "Version", ShortName = "f" };
+            var veggieGroup = new GroupedVeggieModel() { LongName = "Settings"};
+            var fruitGroup = new GroupedVeggieModel() { LongName = "Version" };
             veggieGroup.Add(new VeggieModel() { Name = "Check notes from", IsReallyAVeggie = true, Comment = sender });
             veggieGroup.Add(new VeggieModel() { Name = "Check notes to", IsReallyAVeggie = false, Comment = receiver });
             veggieGroup.Add(new VeggieModel() { Name = "Check notes date", IsReallyAVeggie = true, Comment = noteDate });
