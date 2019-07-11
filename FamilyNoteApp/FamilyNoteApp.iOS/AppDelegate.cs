@@ -28,5 +28,11 @@ namespace FamilyNoteApp.iOS
 
             return base.FinishedLaunching(app, options);
         }
+
+        public override UIWindow Window
+        {
+            get;
+            set;
+        }
     }
 }

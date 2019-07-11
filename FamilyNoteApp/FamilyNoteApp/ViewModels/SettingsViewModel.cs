@@ -11,57 +11,70 @@ namespace FamilyNoteApp.ViewModels
 {
     class SettingsViewModel : BaseViewModel
     {
-        public ObservableCollection<GroupedVeggieModel> grouped { get; set; }
+        public ObservableCollection<GroupedSettingItem> grouped { get; set; }
         private String sender = "All";
         private String receiver = "All";
-        private String noteDate = DateTime.Now.ToString("MM/dd/yyyy");
+        private String noteDate = "Today";
         public Command LoadItemsCommand { get; set; }
 
         public SettingsViewModel()
         {
             Title = "FamilyNoteApp";
-            grouped = new ObservableCollection<GroupedVeggieModel>();
+            grouped = new ObservableCollection<GroupedSettingItem>();
             SetList();
 
-            MessagingCenter.Subscribe<FamilyMembers, String>(this, "Sender", async (obj, Result) =>
+            MessagingCenter.Subscribe<FamilyMembers, String>(this, "Sender", (obj, Result) =>
             {
                 sender = Result as String;
                 App.Sender = sender;
                 grouped.Clear();
                 SetList();
-                await App.serviceUtil.FilterNote(sender, receiver, noteDate);
+                FilterNotes();
+
             });
-            MessagingCenter.Subscribe<FamilyMembers, String>(this, "Receiver", async (obj, Result) =>
+            MessagingCenter.Subscribe<FamilyMembers, String>(this, "Receiver", (obj, Result) =>
             {
                 receiver = Result as String;
                 App.Receiver = receiver;
                 grouped.Clear();
                 SetList();
-                await App.serviceUtil.FilterNote(sender, receiver, noteDate);
+                FilterNotes();
             });
-            MessagingCenter.Subscribe<NoteDate, String>(this, "NoteDate", async (obj, Result) =>
+            MessagingCenter.Subscribe<NoteDate, String>(this, "NoteDate", (obj, Result) =>
             {
-                
+
                 noteDate = Result as String;
                 Debug.WriteLine("&&&&&&&&&&&&&&&" + noteDate);
                 App.NoteDate = noteDate;
                 grouped.Clear();
                 SetList();
-                await App.serviceUtil.FilterNote(sender, receiver, noteDate);
+                FilterNotes();
             });
         }
         private void SetList()
         {
-            var veggieGroup = new GroupedVeggieModel() { LongName = "Settings"};
-            var fruitGroup = new GroupedVeggieModel() { LongName = "Version" };
-            veggieGroup.Add(new VeggieModel() { Name = "Check notes from", IsReallyAVeggie = true, Comment = sender });
-            veggieGroup.Add(new VeggieModel() { Name = "Check notes to", IsReallyAVeggie = false, Comment = receiver });
-            veggieGroup.Add(new VeggieModel() { Name = "Check notes date", IsReallyAVeggie = true, Comment = noteDate });
-            veggieGroup.Add(new VeggieModel() { Name = "Add family members", IsReallyAVeggie = true });
-            veggieGroup.Add(new VeggieModel() { Name = "Logout", IsReallyAVeggie = true });
-            fruitGroup.Add(new VeggieModel() { Name = "Version", IsReallyAVeggie = false, Comment = "1.0" });
-            grouped.Add(veggieGroup);
-            grouped.Add(fruitGroup);
+            var settingGroup = new GroupedSettingItem() { LongName = "Settings", ShortName = "" };
+            var versionGroup = new GroupedSettingItem() { LongName = "Version", ShortName = "" };
+            settingGroup.Add(new SettingItem() { Name = "Check notes from", Comment = sender });
+            settingGroup.Add(new SettingItem() { Name = "Check notes to", Comment = receiver });
+            settingGroup.Add(new SettingItem() { Name = "Check notes date", Comment = noteDate });
+            settingGroup.Add(new SettingItem() { Name = "Add family members" });
+            settingGroup.Add(new SettingItem() { Name = "Logout" });
+            versionGroup.Add(new SettingItem() { Name = "Version", Comment = "1.0" });
+            grouped.Add(settingGroup);
+            grouped.Add(versionGroup);
+        }
+
+        private async void FilterNotes()
+        {
+            if (noteDate.Equals("Today"))
+            {
+                await App.serviceUtil.FilterNote(sender, receiver, DateTime.Now.ToString("MM/dd/yyyy"));
+            }
+            else
+            {
+                await App.serviceUtil.FilterNote(sender, receiver, noteDate);
+            }
         }
     }
 }
